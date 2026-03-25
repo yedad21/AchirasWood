@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --font-heading: "Cinzel", serif;
+  --font-body: "Montserrat", sans-serif;
+  --color-beige-lino: #F5F1E9;
+  --color-verde-cipres: #3D4B3A;
+  --color-marron-carbon: #2C2621;
+  --color-oro-champagne: #C5A059;
 }
 
 html {
@@ -10,7 +14,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #fafaf9; /* stone-50 */
-  color: #1c1917; /* stone-900 */
+  font-family: var(--font-body);
+  background-color: var(--color-beige-lino);
+  color: var(--color-marron-carbon);
 }

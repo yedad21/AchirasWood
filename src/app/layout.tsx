@@ -1,24 +1,31 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
-const playfair = Playfair_Display({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-serif",
+  weight: ["400", "700"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["300", "400"],
+  variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Muebles Artesanales | Hechos a Mano con Alma",
+  title: "JOHNNY + Joey | Tesoros Artesanales en Maderas Nobles y Moissanita",
   description:
-    "Descubre nuestra colección de muebles de madera artesanales. Cada pieza es única, hecha a mano con maderas nobles y técnicas tradicionales.",
+    "No vendemos objetos de madera; facilitamos la inmortalización de momentos. Cada pieza que sale de nuestro taller está diseñada para ser un tesoro definitivo.",
+  icons: {
+    icon: "/images/icono-carita.svg",
+    shortcut: "/images/icono-carita.svg",
+    apple: "/images/icono-carita.svg",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="es" className={`${cinzel.variable} ${montserrat.variable}`}>
       <body className="antialiased">
         <Navbar />
         {children}

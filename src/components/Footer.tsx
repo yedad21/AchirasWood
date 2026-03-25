@@ -2,56 +2,67 @@ import { Globe, Mail, MapPin } from "lucide-react";
 
 const socialLinks = [
   { icon: Globe, href: "#", label: "Sitio Web" },
-  { icon: Mail, href: "mailto:contacto@artesania.com", label: "Email" },
-  { icon: MapPin, href: "#", label: "Ubicación" },
+  { icon: Mail, href: "mailto:contacto@johnnyjoey.co", label: "Email" },
+  { icon: MapPin, href: "#", label: "Bogotá" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-stone-900 text-stone-400">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+    <footer className="bg-[#3D4B3A] text-[#F5F1E9]/50">
+      {/* Centered Brand Logo */}
+      <div className="flex justify-center pt-20 pb-12">
+        <a href="#inicio">
+          <img
+            src="/images/logo-marca.svg"
+            alt="JOHNNY + Joey"
+            className="h-28 w-auto brightness-0 invert opacity-90"
+          />
+        </a>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <a
               href="#inicio"
-              className="font-serif text-2xl font-bold text-white tracking-tight"
+              className="font-heading text-2xl font-bold text-[#F5F1E9] tracking-wider"
             >
-              Artesanía<span className="text-amber-600">.</span>
+              JOHNNY <span className="text-[#C5A059]">+</span> Joey
             </a>
-            <p className="text-sm leading-relaxed max-w-xs">
-              Muebles de madera hechos a mano con alma. Tradición y diseño en
-              cada pieza.
+            <p className="font-body font-light text-sm leading-relaxed max-w-xs">
+              Facilitamos la inmortalización de momentos en maderas nobles y
+              Moissanita. Cada tesoro, una historia.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-white text-sm font-medium tracking-wider uppercase">
+          <div className="space-y-5">
+            <h4 className="text-[#F5F1E9] font-body text-sm font-normal tracking-[0.2em] uppercase">
               Navegación
             </h4>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-3">
               <a
                 href="#inicio"
-                className="text-sm hover:text-white transition-colors duration-300"
+                className="font-body text-sm font-light hover:text-[#C5A059] transition-colors duration-300"
               >
                 Inicio
               </a>
               <a
                 href="#coleccion"
-                className="text-sm hover:text-white transition-colors duration-300"
+                className="font-body text-sm font-light hover:text-[#C5A059] transition-colors duration-300"
               >
-                Colección
+                Colecciones de Autor
               </a>
               <a
                 href="#proceso"
-                className="text-sm hover:text-white transition-colors duration-300"
+                className="font-body text-sm font-light hover:text-[#C5A059] transition-colors duration-300"
               >
-                Proceso
+                Filosofía
               </a>
               <a
                 href="#contacto"
-                className="text-sm hover:text-white transition-colors duration-300"
+                className="font-body text-sm font-light hover:text-[#C5A059] transition-colors duration-300"
               >
                 Contacto
               </a>
@@ -59,9 +70,9 @@ export function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
-            <h4 className="text-white text-sm font-medium tracking-wider uppercase">
-              Síguenos
+          <div className="space-y-5">
+            <h4 className="text-[#F5F1E9] font-body text-sm font-normal tracking-[0.2em] uppercase">
+              Encuéntranos
             </h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -69,7 +80,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-stone-700 text-stone-400 hover:text-white hover:border-amber-600 hover:bg-amber-600/10 transition-all duration-300"
+                  className="w-11 h-11 flex items-center justify-center rounded-full border border-[#F5F1E9]/15 text-[#F5F1E9]/40 hover:text-[#C5A059] hover:border-[#C5A059] hover:bg-[#C5A059]/10 transition-all duration-300"
                 >
                   <social.icon size={18} />
                 </a>
@@ -79,14 +90,18 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-stone-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-stone-500">
-            © {new Date().getFullYear()} Artesanía. Todos los derechos
-            reservados.
-          </p>
-          <p className="text-xs text-stone-600">
-            Diseñado con pasión por la madera.
-          </p>
+        <div className="border-t border-[#F5F1E9]/10 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <img
+              src="/images/icono-carita.svg"
+              alt="Johnny + Joey"
+              className="w-6 h-6 brightness-0 invert opacity-40"
+            />
+            <p className="font-body text-xs font-light text-[#F5F1E9]/25 tracking-wider">
+              © {new Date().getFullYear()} Johnny &amp; Joey Bogotá. Lujo Accesible.
+              Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

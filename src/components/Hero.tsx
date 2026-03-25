@@ -4,64 +4,65 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative h-screen flex items-center bg-stone-50 overflow-hidden"
+      className="relative min-h-screen flex items-center bg-[#F5F1E9] overflow-hidden pt-20"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-amber-700 font-medium tracking-widest text-sm uppercase">
-                Hecho a mano
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Text Content — 5 columns for asymmetry */}
+          <div className="lg:col-span-5 space-y-10">
+            <div className="space-y-6">
+              <p className="text-[#C5A059] font-body font-light tracking-[0.3em] text-xs uppercase">
+                Lujo Accesible
               </p>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 leading-[1.1]">
-                Muebles con{" "}
-                <span className="italic text-amber-800">carácter</span>
+              <h1 className="font-heading text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-[#3D4B3A] leading-[1.05]">
+                Historias que Perduran.
               </h1>
-              <p className="text-lg md:text-xl text-stone-500 max-w-md leading-relaxed">
-                Muebles de madera hechos a mano con alma. Cada pieza cuenta una
-                historia de tradición y belleza natural.
+              <p className="font-body font-light text-lg md:text-xl text-[#2C2621] max-w-md leading-relaxed">
+                No vendemos objetos de madera; facilitamos la inmortalización de
+                momentos. Cada pieza que sale de nuestro taller está diseñada
+                para ser un tesoro definitivo.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#coleccion"
-                className="inline-flex items-center justify-center px-8 py-4 bg-stone-900 text-white text-sm font-medium tracking-wide rounded-sm hover:bg-stone-800 transition-all duration-300 hover:shadow-lg hover:shadow-stone-900/20 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-10 py-4 bg-[#3D4B3A] text-[#F5F1E9] font-body text-sm font-normal tracking-widest rounded-sm hover:bg-[#3D4B3A]/90 transition-all duration-500 hover:shadow-xl hover:shadow-[#3D4B3A]/15 hover:-translate-y-0.5"
               >
-                Ver Colección
+                Descubrir Colecciones de Autor
               </a>
               <a
                 href="#proceso"
-                className="inline-flex items-center justify-center px-8 py-4 border border-stone-300 text-stone-700 text-sm font-medium tracking-wide rounded-sm hover:border-stone-400 hover:bg-stone-100 transition-all duration-300"
+                className="inline-flex items-center justify-center px-10 py-4 border border-[#C5A059]/40 text-[#2C2621]/70 font-body text-sm font-normal tracking-widest rounded-sm hover:border-[#C5A059] hover:bg-[#C5A059]/5 transition-all duration-500"
               >
-                Nuestro Proceso
+                Nuestra Filosofía
               </a>
             </div>
           </div>
 
-          {/* Hero Image — Reemplaza /images/hero.jpg con tu fotografía */}
-          <div className="relative hidden lg:block">
-            <div className="aspect-[3/4] rounded-sm shadow-2xl shadow-stone-300/50 overflow-hidden relative">
+          {/* Hero Image — 7 columns for asymmetric weight */}
+          <div className="relative hidden lg:block lg:col-span-7">
+            <div className="aspect-[4/5] rounded-sm shadow-2xl shadow-[#2C2621]/8 overflow-hidden relative">
               <Image
                 src="/images/hero.jpg"
-                alt="Mueble artesanal de madera hecho a mano"
+                alt="Tesoro artesanal Johnny + Joey — madera noble con Moissanita"
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 1024px) 0vw, 50vw"
+                sizes="(max-width: 1024px) 0vw, 58vw"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-100 rounded-sm -z-10" />
-            <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-amber-700/20 rounded-sm -z-10" />
+            {/* Decorative accents */}
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 border-2 border-[#C5A059]/25 rounded-sm -z-10" />
+            <div className="absolute -top-8 -right-8 w-28 h-28 bg-[#C5A059]/8 rounded-sm -z-10" />
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-400 animate-bounce">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-[1px] h-8 bg-stone-300" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#C5A059]/60 animate-bounce">
+        <span className="font-body text-[10px] tracking-[0.4em] uppercase">Descubrir</span>
+        <div className="w-[1px] h-10 bg-[#C5A059]/30" />
       </div>
     </section>
   );

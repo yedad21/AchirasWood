@@ -16,7 +16,7 @@ const slides = [
     title: "Lujo Accesible",
     description:
       "Trabajamos con maderas de carácter como Teca Premium y Flor Morado, y curaduría de Moissanita. Materiales nobles, al alcance de quien valora lo significativo.",
-    image: "/images/proceso-1.jpg",
+    image: "/images/lujo-1.png",
     accent: "Materiales Premium",
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     title: "Artesanía Viva",
     description:
       "Rechazamos la producción en serie. Nuestro valor es la escucha activa y el diálogo para co-crear anclas personales. Cada pieza nace de una conversación, no de una fábrica.",
-    image: "/images/proceso-2.jpg",
+    image: "/images/artesania-1.png",
     accent: "Co-creación",
   },
   {
@@ -32,7 +32,7 @@ const slides = [
     title: "Ritual de Cuidado",
     description:
       "Nuestras piezas son materia viva. Preserve la madera con aceite mineral y recupere el fuego de la Moissanita (9.25 Mohs) con paño de microfibra. Un tesoro que mejora con el tiempo.",
-    image: "/images/proceso-3.jpg",
+    image: "/images/ritual-1.png",
     accent: "Cuidado esencial",
   },
 ];
@@ -83,11 +83,10 @@ export function Process() {
               className="!w-[85vw] sm:!w-[70vw] md:!w-[50vw] lg:!w-[40vw]"
             >
               <div
-                className={`rounded-sm overflow-hidden shadow-xl transition-all duration-500 ${
-                  activeIndex === index
+                className={`rounded-sm overflow-hidden shadow-xl transition-all duration-500 ${activeIndex === index
                     ? "opacity-100"
                     : "opacity-40"
-                }`}
+                  }`}
               >
                 {/* Card Image */}
                 <div className="aspect-[4/3] relative bg-[#E8E2D8]">

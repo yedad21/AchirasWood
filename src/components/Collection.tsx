@@ -53,7 +53,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Roble Flor Morado o Teca Premium con Moissanita 0.3 ct. Un tesoro conmemorativo diseñado para perdurar generaciones.",
       investment: "Inversión desde $280.000 COP",
-      images: ["/images/producto-1.jpg"],
+      images: ["/images/emblema-1.png"],
     },
     {
       name: "Talismanes con Moissanita",
@@ -61,11 +61,11 @@ const tabProducts: Record<Tab, Product[]> = {
         "Símbolos grabados en roble con Moissanita 9.25 Mohs. Pequeños emblemas de protección y significado personal.",
       investment: "Inversión desde $100.000 COP",
       images: [
-        "/images/talisman-1.jpg",
-        "/images/talisman-2.jpg",
-        "/images/talisman-3.jpg",
-        "/images/talisman-4.jpg",
-        "/images/talisman-5.jpg",
+        "/images/talisman-1.png",
+        "/images/talisman-2.png",
+        "/images/talisman-3.png",
+        "/images/talisman-4.png",
+        "/images/talisman-5.png",
       ],
     },
   ],
@@ -100,7 +100,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Gestión inteligente del cableado. Ergonomía y orden visual para un espacio de trabajo que inspira.",
       investment: "Inversión desde $180.000 COP",
-      images: ["/images/elevador-1.jpg"],
+      images: ["/images/elevador-1.png"],
       measure: "Medida Maestra: 50×20×10 cm",
     },
     {
@@ -108,7 +108,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Teca maciza de alta densidad. Bienestar postural con emoción en el tacto.",
       investment: "Inversión desde $180.000 COP",
-      images: ["/images/producto-6.jpg"],
+      images: ["/images/reposapies-1.png"],
     },
   ],
 };

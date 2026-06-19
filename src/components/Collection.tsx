@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 type Tab = "signature" | "gourmet" | "homeoffice";
 
@@ -9,7 +15,7 @@ interface Product {
   name: string;
   description: string;
   investment: string;
-  image: string;
+  images: string[];
   measure?: string;
 }
 
@@ -47,14 +53,20 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Roble Flor Morado o Teca Premium con Moissanita 0.3 ct. Un tesoro conmemorativo diseñado para perdurar generaciones.",
       investment: "Inversión desde $280.000 COP",
-      image: "/images/producto-1.jpg",
+      images: ["/images/producto-1.jpg"],
     },
     {
       name: "Talismanes con Moissanita",
       description:
         "Símbolos grabados en roble con Moissanita 9.25 Mohs. Pequeños emblemas de protección y significado personal.",
       investment: "Inversión desde $100.000 COP",
-      image: "/images/producto-2.jpg",
+      images: [
+        "/images/talisman-1.jpg",
+        "/images/talisman-2.jpg",
+        "/images/talisman-3.jpg",
+        "/images/talisman-4.jpg",
+        "/images/talisman-5.jpg",
+      ],
     },
   ],
   gourmet: [
@@ -63,7 +75,14 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "La fluidez de la naturaleza en tu cocina. Cada veta cuenta su propia historia en madera de carácter.",
       investment: "Inversión desde $280.000 COP",
-      image: "/images/producto-4.jpg",
+      images: [
+        "/images/gourmet-1.jpg",
+        "/images/gourmet-2.jpg",
+        "/images/gourmet-3.jpg",
+        "/images/gourmet-4.jpg",
+        "/images/gourmet-5.jpg",
+        "/images/gourmet-6.jpg",
+      ],
       measure: "Medida Maestra: Forma orgánica natural",
     },
     {
@@ -71,7 +90,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Precisión en cada veta para el ritual del corte. El equilibrio entre lo funcional y lo escultórico.",
       investment: "Inversión desde $280.000 COP",
-      image: "/images/producto-3.jpg",
+      images: ["/images/producto-3.jpg"],
       measure: "Medida Maestra: 35×25 cm",
     },
   ],
@@ -81,7 +100,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Gestión inteligente del cableado. Ergonomía y orden visual para un espacio de trabajo que inspira.",
       investment: "Inversión desde $180.000 COP",
-      image: "/images/producto-5.jpg",
+      images: ["/images/elevador-1.jpg"],
       measure: "Medida Maestra: 50×20×10 cm",
     },
     {
@@ -89,7 +108,7 @@ const tabProducts: Record<Tab, Product[]> = {
       description:
         "Teca maciza de alta densidad. Bienestar postural con emoción en el tacto.",
       investment: "Inversión desde $180.000 COP",
-      image: "/images/producto-6.jpg",
+      images: ["/images/producto-6.jpg"],
     },
   ],
 };
@@ -146,21 +165,47 @@ export function Collection() {
               key={`${activeTab}-${index}`}
               className="group cursor-pointer"
             >
-              {/* Image */}
+              {/* Image / Carousel */}
               <div className="aspect-[4/5] rounded-sm shadow-xl overflow-hidden relative mb-8 bg-[#E8E2D8]">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-[#3D4B3A]/0 group-hover:bg-[#3D4B3A]/5 transition-all duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="inline-block bg-[#F5F1E9]/90 backdrop-blur-sm text-[#3D4B3A] font-body text-xs font-normal tracking-widest px-5 py-2.5 rounded-sm">
-                    Celebrar este Tesoro →
-                  </span>
-                </div>
+                {product.images.length > 1 ? (
+                  /* — Multi-image: Swiper Carousel — */
+                  <Swiper
+                    modules={[Navigation, Pagination]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    loop
+                    className="h-full w-full collection-swiper"
+                  >
+                    {product.images.map((src, i) => (
+                      <SwiperSlide key={i} className="relative">
+                        <Image
+                          src={src}
+                          alt={`${product.name} — vista ${i + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  /* — Single image: static with hover zoom — */
+                  <>
+                    <Image
+                      src={product.images[0]}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-[#3D4B3A]/0 group-hover:bg-[#3D4B3A]/5 transition-all duration-500" />
+                    <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <span className="inline-block bg-[#F5F1E9]/90 backdrop-blur-sm text-[#3D4B3A] font-body text-xs font-normal tracking-widest px-5 py-2.5 rounded-sm">
+                        Celebrar este Tesoro →
+                      </span>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Info */}

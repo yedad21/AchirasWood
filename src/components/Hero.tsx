@@ -42,12 +42,12 @@ export function Hero() {
 
           {/* Hero Image — 7 columns for asymmetric weight */}
           <div className="relative hidden lg:block lg:col-span-7">
-            <div className="aspect-[4/5] rounded-sm shadow-2xl shadow-[#2C2621]/8 overflow-hidden relative">
+            <div className="group aspect-[4/5] rounded-sm shadow-2xl shadow-[#2C2621]/8 overflow-hidden relative">
               <Image
                 src="/images/hero.jpg"
                 alt="Tesoro artesanal Johnny + Joey — madera noble con Moissanita"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                 priority
                 sizes="(max-width: 1024px) 0vw, 58vw"
               />

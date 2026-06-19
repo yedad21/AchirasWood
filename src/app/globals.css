@@ -18,3 +18,58 @@ body {
   background-color: var(--color-beige-lino);
   color: var(--color-marron-carbon);
 }
+
+/* ─── Collection Swiper ─── */
+.collection-swiper .swiper-pagination-bullet {
+  background: #3D4B3A;
+  opacity: 0.35;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.collection-swiper .swiper-pagination-bullet-active {
+  background: #3D4B3A;
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.collection-swiper .swiper-button-next,
+.collection-swiper .swiper-button-prev {
+  color: #F5F1E9;
+  background: rgba(61, 75, 58, 0.6);
+  backdrop-filter: blur(4px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.collection-swiper .swiper-button-next:hover,
+.collection-swiper .swiper-button-prev:hover {
+  background: rgba(61, 75, 58, 0.85);
+}
+
+.collection-swiper .swiper-button-next::after,
+.collection-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ─── Process Coverflow Swiper ─── */
+.process-coverflow .swiper-pagination-bullet {
+  background: #C5A059;
+  opacity: 0.35;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.process-coverflow .swiper-pagination-bullet-active {
+  background: #C5A059;
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+

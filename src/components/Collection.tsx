@@ -199,11 +199,6 @@ export function Collection() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-[#3D4B3A]/0 group-hover:bg-[#3D4B3A]/5 transition-all duration-500" />
-                    <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <span className="inline-block bg-[#F5F1E9]/90 backdrop-blur-sm text-[#3D4B3A] font-body text-xs font-normal tracking-widest px-5 py-2.5 rounded-sm">
-                        Celebrar este Tesoro →
-                      </span>
-                    </div>
                   </>
                 )}
               </div>

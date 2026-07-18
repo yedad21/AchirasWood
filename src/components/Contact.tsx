@@ -15,7 +15,7 @@ export function Contact() {
           Tu historia merece un tesoro único. Escríbenos y comenzamos a co-crear juntos.
         </p>
         <a
-          href="https://wa.me/57313236684?text=Hola%2C%20quiero%20inmortalizar%20un%20momento%20con%20Johnny%20%2B%20Joey"
+          href="https://wa.me/573186427483?text=Hola%2C%20quiero%20inmortalizar%20un%20momento%20con%20Johnny%20%2B%20Joey"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-3 px-12 py-4 bg-[#3D4B3A] text-[#F5F1E9] font-body text-sm font-normal tracking-widest rounded-sm hover:bg-[#3D4B3A]/90 transition-all duration-500 hover:shadow-xl hover:shadow-[#3D4B3A]/15 hover:-translate-y-0.5"
